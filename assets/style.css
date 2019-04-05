@@ -12,6 +12,7 @@ body {
     border-top-left-radius: 225px;
     border-top-right-radius: 225px;
     border-bottom: 0;
+    font-family: 'Poppins' !important;
 }
 #pokebottom {
     background-color: white;
@@ -20,6 +21,7 @@ body {
     border-bottom-left-radius: 225px;
     border-bottom-right-radius: 225px;
     border-top: 0;
+    font-family: 'Poppins','Source Sans Pro' !important;
 }
 #pokecenter {
     height: 20px;
@@ -27,9 +29,6 @@ body {
 }
 #pokebutton:hover {
     color: grey !important;
-}
-#gif-box {
-    width: 450px;
 }
 footer {
     background-color: white;
