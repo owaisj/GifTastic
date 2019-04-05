@@ -11,17 +11,26 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
         <!--Font Awesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins|Source+Sans+Pro" rel="stylesheet">
         <!--Custom-->
         <link rel="stylesheet" href="assets/style.css" />
     </head>
     <body>
+
+        <!--Navbar-->
+        <nav class="navbar navbar-dark bg-dark">
+            <a href="https://owaisj.github.io/bootstrap-portfolio/portfolio.html" class="fas fa-arrow-left text-white"></a>
+        </nav>
 
         <div class="container-fluid">
             <!--Top of Pokeball-->
             <div class="row justify-content-center mt-3">
                 <div class="col col-sm-8 d-flex justify-content-center">
                     <div id="poketop" class="d-flex justify-content-center align-items-center align-self-center">
-                        
+                        <h4 class="text-white">
+                            Choose your partner wisely
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -29,7 +38,7 @@
             <div class="row justify-content-center">
                 <div class="col col-sm-8 d-flex justify-content-center">
                     <div id="pokecenter" class="bg-dark d-flex justify-content-center align-items-center">
-                        <span id="pokebutton" class="text-light fas fa-circle"></i>
+                        <span id="gifbutton" class="text-light fas fa-circle"></i>
                     </div>
                 </div>
             </div>
@@ -43,6 +52,14 @@
                     </div>
                 </div>
             </div>
+            <!--GIF Container-->
+            <div class="row justify-content-center m-3">
+                <div id="gif-container" class="col col-sm-8 d-flex justify-content-center">
+                    <div id="gif-box" class="d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
+                        
+                    </div>
+                </div>
+            </div>
             <!--Default Pokemon Options-->
             <div class="row justify-content-center m-3">
                 <div class="col col-sm-8 card d-flex justify-content-center border border-light p-0">
@@ -52,16 +69,16 @@
                         </h4>
                     </div>
                     <div id="button-box" class="card-body d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="pikachu">
                             Pikachu
                         </button>
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="bulbasaur">
                             Bulbasaur
                         </button>
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="charmander">
                             Charmander
                         </button>
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="squirtle">
                             Squirtle
                         </button>
                     </div>
@@ -75,13 +92,13 @@
                         </h4>
                     </div>
                     <div id="button-box" class="card-body d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="chikorita">
                             Chikorita
                         </button>
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="cyndaquil">
                             Cyndaquil
                         </button>
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="totodile">
                             Totodile
                         </button>
                     </div>
@@ -95,23 +112,15 @@
                         </h4>
                     </div>
                     <div id="button-box" class="card-body d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="treecko">
                             Treecko
                         </button>
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="torchic">
                             Torchic
                         </button>
-                        <button class="btn btn-danger m-1">
+                        <button class="pokebutton btn btn-danger m-1" value="mudkip">
                             Mudkip
                         </button>
-                    </div>
-                </div>
-            </div>
-            <!--GIF Container-->
-            <div class="row justify-content-center m-3">
-                <div class="col col-sm-8 d-flex justify-content-center border border-light">
-                    <div id="gif-box" class="d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
-                        Gifs!
                     </div>
                 </div>
             </div>
