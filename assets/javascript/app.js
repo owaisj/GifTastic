@@ -9,6 +9,9 @@ $(document).ready(function() {
             method: "GET"
         }).then(function(response) {
             console.log(response);
+            $("<img />").attr("src",response.sprites["front_default"])
+            .addClass("text-center")
+            .appendTo("#poketop");
         })
 
     }
