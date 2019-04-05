@@ -41,7 +41,10 @@
             <div class="row justify-content-center">
                 <div class="col col-sm-8 d-flex justify-content-center">
                     <div id="pokecenter" class="bg-dark d-flex justify-content-center align-items-center">
-                        <span id="gifbutton" class="text-light far fa-circle" value="pokeball"></i>
+                        <span id="gifbutton" class="text-light fa-stack fa-2x" value="pokeball">
+                            <i class="outer far fa-circle fa-stack-2x"></i>
+                            <i class="inner fas fa-circle fa-stack-1x"></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -120,6 +123,27 @@
                         <button class="pokebutton btn btn-danger m-1" value="totodile">
                             Totodile
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--User Inputted Pokemon-->
+        <div class="row justify-content-center m-3">
+            <div id="bills-house" class="col card col-md-6 d-flex justify-content-center p-0">
+                <div class="card-header">
+                    <h4 class="text-center">
+                        Bill's PC
+                    </h4>
+                </div>
+                <div id="bills-pc" class="card-body d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
+                    <div id="user-pokemon">
+
+                    </div>
+                    <div class="m-2">
+                        <img class="img-fluid" style="height: 300px" src="assets/images/bill-pc.png" alt="Bill's PC" />
+                    </div>
+                    <div class="m-2 text-dark">
+                        Form goes here
                     </div>
                 </div>
             </div>
