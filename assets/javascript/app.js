@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    let pokeArray = [];
+
     function capitalizeFirst(word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
     }
@@ -59,6 +61,16 @@ $(document).ready(function() {
         })
     }
 
+    function renderButtons() {
+        for (let i = 0; i < pokeArray.length; i++) {
+            let userBtn = $("<button />");
+            userBtn.addClass("pokebutton btn btn-danger m-1")
+            .attr("value",pokeArray[i])
+            .text(capitalizeFirst(pokeArray[i]))
+            .appendTo($("#user-pokemon"));
+        }
+    }
+
     $(document).on("click","#gifbutton",function(event){
         console.log("it works!");
         $("#gif-container").addClass("border border-light");
@@ -80,4 +92,12 @@ $(document).ready(function() {
         displayPokemon($(this).attr("value"));
         $("#gifbutton").attr("value",$(this).attr("value"));
     });
+
+    $(document).on("click","#add-pokemon",function(event){
+        event.preventDefault();
+        $("#user-pokemon").empty();
+        let pokemon = $("#poke-input").val();
+        pokeArray.push(pokemon.toLowerCase());
+        renderButtons();
+    })
 });
