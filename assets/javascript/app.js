@@ -21,7 +21,7 @@ $(document).ready(function() {
     displayPokemon("pikachu");
 
     function displayPokeGif(pokemon) {
-        let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + pokemon + "&api_key=a1G6lyUPmDUgPWu9HZQdwpAH95RFBf4T&limit=5";
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + pokemon + "&api_key=a1G6lyUPmDUgPWu9HZQdwpAH95RFBf4T&limit=10";
 
         $.ajax({
             url: queryURL,
@@ -29,7 +29,7 @@ $(document).ready(function() {
         }).then(function(response){
             console.log(response);
             console.log(response.data[0]["images"]["fixed_height_small"]["url"]);
-            for (let i = 0; i < 5; i++){
+            for (let i = 0; i < 10; i++){
                 $("<img />").attr("src",response.data[i]["images"]["fixed_height_small"]["url"])
             .appendTo("#gif-box");
             }
