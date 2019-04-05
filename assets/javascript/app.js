@@ -30,8 +30,20 @@ $(document).ready(function() {
             console.log(response);
             console.log(response.data[0]["images"]["fixed_height_small"]["url"]);
             for (let i = 0; i < 10; i++){
-                $("<img />").attr("src",response.data[i]["images"]["fixed_height_small"]["url"])
-            .appendTo("#gif-box");
+                let stillURL = response.data[i]["images"]["fixed_height_small_still"]["url"];
+                let animatedURL = response.data[i]["images"]["fixed_height_small"]["url"];
+                let gifDiv = $("<div />").addClass("m-1");
+                
+                $("<img />").attr("src",stillURL)
+                .attr("still",stillURL)
+                .attr("animated",animatedURL)
+                .addClass("gif")
+                .appendTo(gifDiv);
+
+                $("<p />").text("Rating: " + response.data[i]["rating"].toUpperCase())
+                .appendTo(gifDiv);
+                
+                gifDiv.appendTo("#gif-box");
             }
             
         })
@@ -41,5 +53,13 @@ $(document).ready(function() {
         console.log("it works!");
         $("#gif-box").empty();
         displayPokeGif("pikachu");
+    });
+
+    $(document).on("click",".gif",function(event){
+        if($(this).attr("src") === $(this).attr("still")){
+            $(this).attr("src",$(this).attr("animated"));
+        } else {
+            $(this).attr("src",$(this).attr("still"));
+        }
     });
 });
