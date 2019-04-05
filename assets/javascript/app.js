@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+    function capitalizeFirst(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+
     function displayPokemon(pokemon) {
         
         let queryURL = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
@@ -12,7 +16,16 @@ $(document).ready(function() {
             $("<img />").attr("src",response.sprites["front_default"])
             .addClass("text-center")
             .appendTo("#poketop");
-            $("<li />").text(response.name.toUpperCase())
+            $("<p />").text(capitalizeFirst(response.name))
+            .addClass("text-white")
+            .appendTo("#poketop");
+            $("<li />").text("Type: " + capitalizeFirst(response.types[0]["type"]["name"]))
+            .appendTo("#statlist");
+            $("<li />").text("Attack: " + response.stats[4]["base_stat"])
+            .appendTo("#statlist");
+            $("<li />").text("Special Attack: " + response.stats[2]["base_stat"])
+            .appendTo("#statlist");
+            $("<li />").text("Speed: " + response.stats[0]["base_stat"])
             .appendTo("#statlist");
         })
 
@@ -27,8 +40,7 @@ $(document).ready(function() {
             url: queryURL,
             method: "GET"
         }).then(function(response){
-            console.log(response);
-            console.log(response.data[0]["images"]["fixed_height_small"]["url"]);
+            
             for (let i = 0; i < 10; i++){
                 let stillURL = response.data[i]["images"]["fixed_height_small_still"]["url"];
                 let animatedURL = response.data[i]["images"]["fixed_height_small"]["url"];
@@ -51,6 +63,7 @@ $(document).ready(function() {
 
     $(document).on("click","#pokebutton",function(event){
         console.log("it works!");
+        $("#gif-container").addClass("border border-light");
         $("#gif-box").empty();
         displayPokeGif("pikachu");
     });
