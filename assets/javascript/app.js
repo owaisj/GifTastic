@@ -12,9 +12,17 @@ $(document).ready(function() {
             $("<img />").attr("src",response.sprites["front_default"])
             .addClass("text-center")
             .appendTo("#poketop");
+            $("<li />").text(response.name)
+            .appendTo("#statlist");
+            $("<li />").text(response.types[0]["type"]["name"])
+            .appendTo("#statlist");
         })
 
     }
 
     displayPokemon("haxorus");
+
+    function displayPokeGif(pokemon) {
+        
+    }
 });
