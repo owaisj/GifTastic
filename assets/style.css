@@ -22,14 +22,14 @@ body {
     border-top: 0;
 }
 #pokecenter {
-    height: 50px;
+    height: 20px;
     width: 450px;
 }
 #pokebutton:hover {
-    color: grey;
+    color: grey !important;
 }
-.jumbotron {
-    border-radius: 0;
+#gif-box {
+    width: 450px;
 }
 footer {
     background-color: white;
