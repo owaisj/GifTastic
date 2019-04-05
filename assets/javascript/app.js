@@ -61,7 +61,7 @@ $(document).ready(function() {
         })
     }
 
-    $(document).on("click","#pokebutton",function(event){
+    $(document).on("click","#gifbutton",function(event){
         console.log("it works!");
         $("#gif-container").addClass("border border-light");
         $("#gif-box").empty();

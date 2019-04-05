@@ -27,7 +27,7 @@ body {
     height: 20px;
     width: 450px;
 }
-#pokebutton:hover {
+#gifbutton:hover {
     color: grey !important;
 }
 footer {
