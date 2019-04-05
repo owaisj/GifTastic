@@ -1,0 +1,31 @@
+body {
+    background-color: grey;
+}
+#pokeball {
+    width: 500px;
+    height: 500px;
+}
+#poketop {
+    width: 500px;
+    height: 250px;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    /*border: 10px solid black;*/
+    border-bottom: 0;
+}
+#pokebottom {
+    width: 500px;
+    height: 250px;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    border-top: 0;
+}
+#pokecenter {
+    height: 40px;
+}
+#pokebutton:hover {
+    color: grey;
+}
+.jumbotron {
+    border-radius: 0;
+}
