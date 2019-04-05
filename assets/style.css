@@ -38,3 +38,6 @@ footer {
 .card {
     max-width: 500px;
 }
+#gif-container {
+    border-radius: 15px;
+}
