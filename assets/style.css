@@ -1,0 +1,38 @@
+body {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#poketop {
+    background-color: red;
+    width: 450px;
+    height: 225px;
+    border-top-left-radius: 225px;
+    border-top-right-radius: 225px;
+    border-bottom: 0;
+}
+#pokebottom {
+    background-color: white;
+    width: 450px;
+    height: 225px;
+    border-bottom-left-radius: 225px;
+    border-bottom-right-radius: 225px;
+    border-top: 0;
+}
+#pokecenter {
+    height: 20px;
+    width: 450px;
+}
+#pokebutton:hover {
+    color: grey !important;
+}
+#gif-box {
+    width: 450px;
+}
+footer {
+    background-color: white;
+    margin: auto auto 0 auto;
+    width: 100%;
+}
