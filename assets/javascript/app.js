@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     function displayPokemon(pokemon) {
         
-        var queryURL = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+        let queryURL = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
 
         $.ajax({
             url: queryURL,
@@ -20,9 +20,23 @@ $(document).ready(function() {
 
     }
 
-    displayPokemon("haxorus");
+    displayPokemon("pikachu");
 
     function displayPokeGif(pokemon) {
+        let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + pokemon + "&api_key=a1G6lyUPmDUgPWu9HZQdwpAH95RFBf4T&limit=5";
         
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response){
+            console.log(response);
+        })
+    
+    
     }
+
+    $(document).on("click","#pokebutton",function(event){
+        console.log("it works!");
+        console.log(displayPokeGif("pikachu"));
+    });
 });
