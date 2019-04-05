@@ -32,7 +32,7 @@ $(document).ready(function() {
     }
 
     function displayPokeGif(pokemon) {
-        let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + pokemon + "&api_key=a1G6lyUPmDUgPWu9HZQdwpAH95RFBf4T&limit=10";
+        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + pokemon + "&api_key=a1G6lyUPmDUgPWu9HZQdwpAH95RFBf4T&limit=10";
 
         $.ajax({
             url: queryURL,
