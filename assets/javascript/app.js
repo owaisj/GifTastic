@@ -31,8 +31,6 @@ $(document).ready(function() {
 
     }
 
-    displayPokemon("pikachu");
-
     function displayPokeGif(pokemon) {
         let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + pokemon + "&api_key=a1G6lyUPmDUgPWu9HZQdwpAH95RFBf4T&limit=10";
 
@@ -65,7 +63,7 @@ $(document).ready(function() {
         console.log("it works!");
         $("#gif-container").addClass("border border-light");
         $("#gif-box").empty();
-        displayPokeGif("pikachu");
+        displayPokeGif($(this).attr("value"));
     });
 
     $(document).on("click",".gif",function(event){
@@ -74,5 +72,12 @@ $(document).ready(function() {
         } else {
             $(this).attr("src",$(this).attr("still"));
         }
+    });
+
+    $(document).on("click",".pokebutton",function(event){
+        $("#poketop").empty();
+        $("#statlist").empty();
+        displayPokemon($(this).attr("value"));
+        $("#gifbutton").attr("value",$(this).attr("value"));
     });
 });
