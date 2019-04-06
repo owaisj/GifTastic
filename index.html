@@ -68,7 +68,7 @@
             </div>
             <!--Default Pokemon Options-->
             <div class="row justify-content-center m-3">
-                <div class="col col-md-2 card d-flex justify-content-center border border-light p-0 m-1">
+                <div class="col col-md-2 card starter-card d-flex justify-content-center border border-light p-0 m-1">
                     <div class="card-header">
                         <h4 class="text-center">
                             Kanto Starters
@@ -89,7 +89,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="col col-md-2 card d-flex justify-content-center border border-light p-0 m-1">
+                <div class="col col-md-2 card starter-card d-flex justify-content-center border border-light p-0 m-1">
                     <div class="card-header">
                         <h4 class="text-center">
                             Hoenn Starters
@@ -107,7 +107,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="col col-md-2 card d-flex justify-content-center border border-light p-0 m-1">
+                <div class="col col-md-2 card starter-card d-flex justify-content-center border border-light p-0 m-1">
                     <div class="card-header">
                         <h4 class="text-center">
                             Johto Starters
@@ -129,21 +129,27 @@
         </div>
         <!--User Inputted Pokemon-->
         <div class="row justify-content-center m-3">
-            <div id="bills-house" class="col card col-md-6 d-flex justify-content-center p-0">
+            <div id="bills-house" class="col card pc-card col-md-6 d-flex p-0">
                 <div class="card-header">
                     <h4 class="text-center">
                         Bill's PC
                     </h4>
                 </div>
-                <div id="bills-pc" class="card-body d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
+                <div id="bills-pc" class="card-body d-flex justify-content-between text-white p-3">
+                    <div class="m-2">
+                        <img class="img-fluid" style="max-height: 300px" src="assets/images/bill-pc.png" alt="Bill's PC" />
+                    </div>          
                     <div id="user-pokemon">
 
                     </div>
-                    <div class="m-2">
-                        <img class="img-fluid" style="height: 300px" src="assets/images/bill-pc.png" alt="Bill's PC" />
-                    </div>
-                    <div class="m-2 text-dark">
-                        Form goes here
+                    <div class="d-flex flex-column justify-content-center text-dark m-2">
+                        <form id="gif-form" class="text-center" >
+                            <label for="poke-input">
+                                Ask Bill for a Pok&eacute;mon!
+                            </label>
+                            <input type="text" class="form-control m-1" id="poke-input" required  />
+                            <button id="add-pokemon" type="submit" class="btn btn-light border border-dark">Go!</button>
+                        </form>
                     </div>
                 </div>
             </div>
