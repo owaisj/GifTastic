@@ -73,7 +73,7 @@ $(document).ready(function() {
 
     $(document).on("click","#gifbutton",function(event){
         console.log("it works!");
-        $("#gif-container").addClass("border border-light");
+        $("#gif-container").addClass("border border-danger bg-light");
         $("#gif-box").empty();
         displayPokeGif($(this).attr("value"));
     });
