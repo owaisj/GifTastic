@@ -1,11 +1,9 @@
 $(document).ready(function() {
-
     let pokeArray = [];
 
     function capitalizeFirst(word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
     }
-
     function displayPokemon(pokemon) {
         
         let queryURL = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
@@ -15,12 +13,14 @@ $(document).ready(function() {
             method: "GET"
         }).then(function(response) {
             console.log(response);
+            //This can be changed to a template literal
             $("<img />").attr("src",response.sprites["front_default"])
             .addClass("text-center")
             .appendTo("#poketop");
             $("<p />").text(capitalizeFirst(response.name))
             .addClass("text-white")
             .appendTo("#poketop");
+            //This can be an array with .map() method. Make an array with this information.
             $("<li />").text("Type: " + capitalizeFirst(response.types[0]["type"]["name"]))
             .appendTo("#statlist");
             $("<li />").text("Attack: " + response.stats[4]["base_stat"])
@@ -32,7 +32,6 @@ $(document).ready(function() {
         })
 
     }
-
     function displayPokeGif(pokemon) {
         let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + pokemon + "&api_key=a1G6lyUPmDUgPWu9HZQdwpAH95RFBf4T&limit=10";
 
@@ -60,7 +59,6 @@ $(document).ready(function() {
             
         })
     }
-
     function renderButtons() {
         for (let i = 0; i < pokeArray.length; i++) {
             let userBtn = $("<button />");
@@ -77,7 +75,6 @@ $(document).ready(function() {
         $("#gif-box").empty();
         displayPokeGif($(this).attr("value"));
     });
-
     $(document).on("click",".gif",function(event){
         if($(this).attr("src") === $(this).attr("still")){
             $(this).attr("src",$(this).attr("animated"));
@@ -85,14 +82,12 @@ $(document).ready(function() {
             $(this).attr("src",$(this).attr("still"));
         }
     });
-
     $(document).on("click",".pokebutton",function(event){
         $("#poketop").empty();
         $("#statlist").empty();
         displayPokemon($(this).attr("value"));
         $("#gifbutton").attr("value",$(this).attr("value"));
     });
-
     $(document).on("click","#add-pokemon",function(event){
         event.preventDefault();
         $("#user-pokemon").empty();
@@ -104,7 +99,6 @@ $(document).ready(function() {
         } else {
             pokeArray.push(pokemon.toLowerCase());
             renderButtons();
-        }
-        
+        } 
     })
 });
