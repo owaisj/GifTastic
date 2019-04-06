@@ -97,7 +97,14 @@ $(document).ready(function() {
         event.preventDefault();
         $("#user-pokemon").empty();
         let pokemon = $("#poke-input").val();
-        pokeArray.push(pokemon.toLowerCase());
-        renderButtons();
+        if (pokemon === "") {
+            $("<div />").addClass("alert alert-danger")
+            .text("Please enter a name")
+            .appendTo($("#user-pokemon"));
+        } else {
+            pokeArray.push(pokemon.toLowerCase());
+            renderButtons();
+        }
+        
     })
 });
