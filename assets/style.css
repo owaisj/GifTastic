@@ -11,7 +11,7 @@ body {
     height: 225px;
     border-top-left-radius: 225px;
     border-top-right-radius: 225px;
-    border-bottom: 0;
+    border: 5px black solid;
     font-family: 'Poppins' !important;
 }
 #pokebottom {
@@ -20,23 +20,32 @@ body {
     height: 225px;
     border-bottom-left-radius: 225px;
     border-bottom-right-radius: 225px;
-    border-top: 0;
+    border: 5px black solid;
     font-family: 'Poppins','Source Sans Pro' !important;
 }
 #pokecenter {
-    height: 20px;
+    height: 40px;
     width: 450px;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
 }
-#gifbutton:hover {
+.fa-stack {
+    font-size: 1em;
+}
+#gifbutton .inner:hover {
     color: grey !important;
+    cursor: grab;
 }
 footer {
     background-color: white;
     margin: auto auto 0 auto;
     width: 100%;
 }
-.card {
+.starter-card {
     max-width: 500px;
+}
+.pc-card {
+    max-width: 750px;
 }
 #gif-container {
     border-radius: 15px;

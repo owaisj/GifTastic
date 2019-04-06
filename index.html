@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>
-            GifTastic
+            Pok&eacute;-GifTastic
         </title>
         <!--Reset-->
         <link rel="stylesheet" href="assets/reset.css" />
@@ -15,12 +15,15 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins|Source+Sans+Pro" rel="stylesheet">
         <!--Custom-->
         <link rel="stylesheet" href="assets/style.css" />
+        <!--Favicon-->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
     </head>
     <body>
 
         <!--Navbar-->
         <nav class="navbar navbar-dark bg-dark">
             <a href="https://owaisj.github.io/bootstrap-portfolio/portfolio.html" class="fas fa-arrow-left text-white"></a>
+            <span class="text-white float-right">View Code: <a href="https://github.com/owaisj/GifTastic" class="fab fa-github text-white"></a></span>
         </nav>
 
         <div class="container-fluid">
@@ -38,7 +41,10 @@
             <div class="row justify-content-center">
                 <div class="col col-sm-8 d-flex justify-content-center">
                     <div id="pokecenter" class="bg-dark d-flex justify-content-center align-items-center">
-                        <span id="gifbutton" class="text-light fas fa-circle"></i>
+                        <span id="gifbutton" class="text-light fa-stack fa-2x" value="pokeball">
+                            <i class="outer far fa-circle fa-stack-2x"></i>
+                            <i class="inner fas fa-circle fa-stack-1x"></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -62,7 +68,7 @@
             </div>
             <!--Default Pokemon Options-->
             <div class="row justify-content-center m-3">
-                <div class="col col-sm-8 card d-flex justify-content-center border border-light p-0">
+                <div class="col col-md-2 card starter-card d-flex justify-content-center border border-light p-0 m-1">
                     <div class="card-header">
                         <h4 class="text-center">
                             Kanto Starters
@@ -83,9 +89,25 @@
                         </button>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-center m-3">
-                <div class="col col-sm-8 card d-flex justify-content-center border border-light p-0">
+                <div class="col col-md-2 card starter-card d-flex justify-content-center border border-light p-0 m-1">
+                    <div class="card-header">
+                        <h4 class="text-center">
+                            Hoenn Starters
+                        </h4>
+                    </div>
+                    <div id="button-box" class="card-body d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
+                        <button class="pokebutton btn btn-danger m-1" value="treecko">
+                            Treecko
+                        </button>
+                        <button class="pokebutton btn btn-danger m-1" value="torchic">
+                            Torchic
+                        </button>
+                        <button class="pokebutton btn btn-danger m-1" value="mudkip">
+                            Mudkip
+                        </button>
+                    </div>
+                </div>
+                <div class="col col-md-2 card starter-card d-flex justify-content-center border border-light p-0 m-1">
                     <div class="card-header">
                         <h4 class="text-center">
                             Johto Starters
@@ -104,23 +126,30 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center m-3">
-                <div class="col col-sm-8 card d-flex justify-content-center border border-light p-0">
-                    <div class="card-header">
-                        <h4 class="text-center">
-                            Hoenn Starters
-                        </h4>
+        </div>
+        <!--User Inputted Pokemon-->
+        <div class="row justify-content-center m-3">
+            <div id="bills-house" class="col card pc-card col-md-6 d-flex p-0">
+                <div class="card-header">
+                    <h4 class="text-center">
+                        Bill's PC
+                    </h4>
+                </div>
+                <div id="bills-pc" class="card-body d-flex justify-content-between text-white p-3">
+                    <div class="m-2">
+                        <img class="img-fluid" style="max-height: 300px" src="assets/images/bill-pc.png" alt="Bill's PC" />
+                    </div>          
+                    <div id="user-pokemon">
+
                     </div>
-                    <div id="button-box" class="card-body d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
-                        <button class="pokebutton btn btn-danger m-1" value="treecko">
-                            Treecko
-                        </button>
-                        <button class="pokebutton btn btn-danger m-1" value="torchic">
-                            Torchic
-                        </button>
-                        <button class="pokebutton btn btn-danger m-1" value="mudkip">
-                            Mudkip
-                        </button>
+                    <div class="d-flex flex-column justify-content-center text-dark m-2">
+                        <form id="gif-form" class="text-center" >
+                            <label for="poke-input">
+                                Ask Bill for a Pok&eacute;mon!
+                            </label>
+                            <input type="text" class="form-control m-1" id="poke-input" required  />
+                            <button id="add-pokemon" type="submit" class="btn btn-light border border-dark">Go!</button>
+                        </form>
                     </div>
                 </div>
             </div>
