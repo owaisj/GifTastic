@@ -26,6 +26,8 @@ body {
 #pokecenter {
     height: 40px;
     width: 450px;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
 }
 .fa-stack {
     font-size: 1em;
@@ -39,8 +41,11 @@ footer {
     margin: auto auto 0 auto;
     width: 100%;
 }
-.card {
+.starter-card {
     max-width: 500px;
+}
+.pc-card {
+    max-width: 750px;
 }
 #gif-container {
     border-radius: 15px;
