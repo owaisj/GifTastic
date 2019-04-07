@@ -39,11 +39,16 @@ $(document).ready(function() {
             url: queryURL,
             method: "GET"
         }).then(function(response){
+            console.log(response);
             
             for (let i = 0; i < 10; i++){
                 let stillURL = response.data[i]["images"]["fixed_height_small_still"]["url"];
                 let animatedURL = response.data[i]["images"]["fixed_height_small"]["url"];
-                let gifDiv = $("<div />").addClass("m-1");
+                let gifDiv = $("<div />").addClass("gifDiv m-1");
+                let infoList = $("<ul />");
+                let tags = response.data[i]["slug"];
+                let tagArray = tags.split("-");
+                tagArray.pop();
                 
                 $("<img />").attr("src",stillURL)
                 .attr("still",stillURL)
@@ -51,10 +56,19 @@ $(document).ready(function() {
                 .addClass("gif")
                 .appendTo(gifDiv);
 
-                $("<p />").text("Rating: " + response.data[i]["rating"].toUpperCase())
-                .appendTo(gifDiv);
+                $("<li />").text("Title: " + response.data[i]["title"])
+                .appendTo(infoList);
+                $("<li />").text("Tags: " + tagArray.join(", "))
+                .appendTo(infoList);
+                $("<li />").text("Rating: " + response.data[i]["rating"].toUpperCase())
+                .appendTo(infoList);
+                $("<a />").addClass("fas fa-download")
+                .attr("download","")
+                .appendTo("<li />")
+                .appendTo(infoList);
                 
-                gifDiv.appendTo("#gif-box");
+                gifDiv.append(infoList)
+                .prependTo("#gif-box");
             }
             
         })
