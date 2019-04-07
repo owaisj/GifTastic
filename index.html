@@ -26,14 +26,28 @@
             <span class="text-white float-right">View Code: <a href="https://github.com/owaisj/GifTastic" class="fab fa-github text-white"></a></span>
         </nav>
 
+        <div class="jumbotron bg-danger">
+            <h1 class="text-light text-center">
+                Pok&eacute;-GifTastic!
+            </h1>
+            <h5 class="text-white text-center">
+                Pick a Pokemon. Open the Pok&eacute;ball to see it in action.
+            </h5>
+        </div>
+
         <div class="container-fluid">
             <!--Top of Pokeball-->
             <div class="row justify-content-center mt-3">
                 <div class="col col-sm-8 d-flex justify-content-center">
-                    <div id="poketop" class="d-flex justify-content-center align-items-center align-self-center">
-                        <h4 class="text-white">
-                            Choose your partner wisely
-                        </h4>
+                    <div id="poketop" class="d-flex flex-column justify-content-center align-items-center align-self-center">        
+                        <div>
+                            <img class="img-fluid samson" src="assets/images/oak.png" />
+                        </div>
+                        <div>
+                            <h4 class="text-white">
+                                Choose your partner wisely
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,8 +74,8 @@
             </div>
             <!--GIF Container-->
             <div class="row justify-content-center m-3">
-                <div id="gif-container" class="col col-sm-8 d-flex justify-content-center">
-                    <div id="gif-box" class="d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
+                <div id="gif-container" class="col col-md-6 d-flex justify-content-center">
+                    <div id="gif-box" class="d-flex flex-wrap justify-content-center align-items-center text-center p-3">
                         
                     </div>
                 </div>
@@ -77,6 +91,9 @@
                     <div id="button-box" class="card-body d-flex flex-wrap justify-content-center align-items-center text-center text-white p-3">
                         <button class="pokebutton btn btn-danger m-1" value="pikachu">
                             Pikachu
+                        </button>
+                        <button class="pokebutton btn btn-danger m-1" value="eevee">
+                            Eevee
                         </button>
                         <button class="pokebutton btn btn-danger m-1" value="bulbasaur">
                             Bulbasaur
