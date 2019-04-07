@@ -62,7 +62,8 @@ $(document).ready(function() {
                 .appendTo(infoList);
                 $("<li />").text("Rating: " + response.data[i]["rating"].toUpperCase())
                 .appendTo(infoList);
-                $("<a />").addClass("fas fa-download")
+                $("<a />").addClass("fas fa-download text-danger")
+                .attr("href", response.data[i]["images"]["original"]["url"])
                 .attr("download","")
                 .appendTo("<li />")
                 .appendTo(infoList);
