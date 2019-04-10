@@ -4,7 +4,9 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
+.jumbotron {
+    margin-top: 40px;
+}
 #poketop {
     background-color: red;
     width: 450px;
