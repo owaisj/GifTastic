@@ -21,11 +21,11 @@
     <body>
 
         <!--Navbar-->
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-dark fixed-top">
             <a href="https://owaisj.github.io/bootstrap-portfolio/portfolio.html" class="fas fa-arrow-left text-white"></a>
             <span class="text-white float-right">View Code: <a href="https://github.com/owaisj/GifTastic" class="fab fa-github text-white"></a></span>
         </nav>
-
+        <!--Page Title-->
         <div class="jumbotron bg-danger">
             <h1 class="text-light text-center">
                 Pok&eacute;-GifTastic!
@@ -34,9 +34,7 @@
                 Pick a Pokemon. Open the Pok&eacute;ball to see it in action.
             </h5>
         </div>
-
-        <div class="container-fluid">
-            
+        <div class="container-fluid">    
             <div class="row justify-content-center mt-3">
                 <!--Pokeball-->
                 <div class="col col-sm-8 d-flex flex-column justify-content-center align-items-center">
@@ -63,7 +61,6 @@
                     </div>
                 </div>
             </div>
-
             <!--GIF Container-->
             <div class="row justify-content-center m-3">
                 <div id="gif-container" class="col col-md-6 d-flex justify-content-center">
@@ -135,7 +132,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <!--User Inputted Pokemon-->
         <div class="row justify-content-center m-3">
             <div id="bills-house" class="col card pc-card col-md-6 d-flex p-0">
@@ -149,7 +145,6 @@
                         <img class="img-fluid" style="max-height: 300px" src="assets/images/bill-pc.png" alt="Bill's PC" />
                     </div>          
                     <div id="user-pokemon">
-
                     </div>
                     <div class="d-flex flex-column justify-content-center text-dark m-2">
                         <form id="gif-form" class="text-center" >
@@ -163,14 +158,12 @@
                 </div>
             </div>
         </div>
-
         <!--Footer-->
         <footer>
             <h5 class="text-center">
                 Made using PokeAPI & GIPHY API
             </h5>
         </footer>
-
         <!--jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!--Bootstrap-->
