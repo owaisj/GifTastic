@@ -1,7 +1,7 @@
 $(document).ready(function() {
     let pokeArray = [];
-    let kantoStarters = ["pikachu","eevee","charmander","squirtle","bulbasaur"];
-    let hoennStarters = ["torchic","treecko","mudkip"];
+    let kantoStarters = ["pikachu","eevee","bulbasaur","charmander","squirtle"];
+    let hoennStarters = ["treecko","torchic","mudkip"];
     let johtoStarters = ["chikorita","cyndaquil","totodile"];
 
     function capitalizeFirst(word) {
@@ -92,7 +92,6 @@ $(document).ready(function() {
         displayButton(kantoButtons,"kanto");
         displayButton(johtoButtons,"johto");
         displayButton(hoennButtons,"hoenn");
-        
     })();
 
     $(document).on("click","#gifbutton",function(event){
