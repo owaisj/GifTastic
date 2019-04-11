@@ -102,6 +102,10 @@ $(document).ready(function() {
         $("#statlist").empty();
         displayPokemon($(this).attr("value"));
         $("#gifbutton").attr("value",$(this).attr("value"));
+        window.scrollTo({
+            top: 250,
+            behavior: "smooth"
+        })
     });
     $(document).on("click","#add-pokemon",function(event){
         event.preventDefault();
