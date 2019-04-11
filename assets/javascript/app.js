@@ -1,14 +1,13 @@
 $(document).ready(function() {
-    let pokeArray = [];
-    let kantoStarters = ["pikachu","eevee","charmander","squirtle","bulbasaur"];
-    let hoennStarters = ["torchic","treecko","mudkip"];
+    let billsPokemon = [];
+    let kantoStarters = ["pikachu","eevee","bulbasaur","charmander","squirtle"];
+    let hoennStarters = ["treecko","torchic","mudkip"];
     let johtoStarters = ["chikorita","cyndaquil","totodile"];
 
     function capitalizeFirst(word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
     }
     function displayPokemon(pokemon) {
-        
         let queryURL = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
 
         $.ajax({
@@ -72,42 +71,36 @@ $(document).ready(function() {
             
         })
     }
-    function renderButton(name) {
-        let userBtn = $("<button />");
-        userBtn.addClass("pokebutton btn btn-danger m-1")
-        .attr("value",name)
-        .text(capitalizeFirst(name))
-        .appendTo($("#user-pokemon"));
-    }
 
-    //Starter Pokemon
-    function createStarterButton(name) {
+    function createButton(name) {
         let userBtn = $("<button />");
         userBtn.addClass("pokebutton btn btn-danger m-1")
         .attr("value",name)
         .text(capitalizeFirst(name));
         return userBtn;
     }
-    function displayStarterButton (starters, region) {
+    function displayButton (starters, region) {
         starters.forEach(function(name){
             name.appendTo(`#${region}-box`);
         })
     }
     (function () {
-        let kantoButtons = kantoStarters.map(createStarterButton);
-        let johtoButtons = johtoStarters.map(createStarterButton);
-        let hoennButtons = hoennStarters.map(createStarterButton);
-        displayStarterButton(kantoButtons,"kanto");
-        displayStarterButton(johtoButtons,"johto");
-        displayStarterButton(hoennButtons,"hoenn");
-        
+        let kantoButtons = kantoStarters.map(createButton);
+        let johtoButtons = johtoStarters.map(createButton);
+        let hoennButtons = hoennStarters.map(createButton);
+        displayButton(kantoButtons,"kanto");
+        displayButton(johtoButtons,"johto");
+        displayButton(hoennButtons,"hoenn");
     })();
 
     $(document).on("click","#gifbutton",function(event){
-        console.log("it works!");
         $("#gif-container").addClass("border border-danger bg-light");
         $("#gif-box").empty();
         displayPokeGif($(this).attr("value"));
+        window.scrollTo({
+            top: 750,
+            behavior: "smooth"
+        })
     });
     $(document).on("click",".gif",function(event){
         if($(this).attr("src") === $(this).attr("still")){
@@ -128,15 +121,18 @@ $(document).ready(function() {
     });
     $(document).on("click","#add-pokemon",function(event){
         event.preventDefault();
-        $("#user-pokemon").empty();
+        $("#user-box").empty();
+        let userPokemonButtons = [];
         let pokemon = $("#poke-input").val();
+        $("#poke-input").val('')
         if (pokemon === "") {
             $("<div />").addClass("alert alert-danger")
             .text("Please enter a name")
-            .appendTo($("#user-pokemon"));
+            .appendTo($("#user-box"));
         } else {
-            pokeArray.push(pokemon.toLowerCase());
-            pokeArray.map(renderButton);
+            billsPokemon.push(pokemon.toLowerCase());
+            userPokemonButtons = billsPokemon.map(createButton);
+            displayButton(userPokemonButtons,"user")
         } 
     })
 });
