@@ -1,5 +1,8 @@
 $(document).ready(function() {
     let pokeArray = [];
+    let kantoStarters = ["pikachu","eevee","charmander","squirtle","bulbasaur"];
+    let hoennStarters = ["torchic","treecko","mudkip"];
+    let johtoStarters = ["chikorita","cyndaquil","totodile"];
 
     function capitalizeFirst(word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
@@ -12,15 +15,12 @@ $(document).ready(function() {
             url: queryURL,
             method: "GET"
         }).then(function(response) {
-            console.log(response);
-            //This can be changed to a template literal
             $("<img />").attr("src",response.sprites["front_default"])
             .addClass("text-center")
             .appendTo("#poketop");
             $("<p />").text(capitalizeFirst(response.name))
             .addClass("text-white")
             .appendTo("#poketop");
-            //This can be an array with .map() method. Make an array with this information.
             $("<li />").text("Type: " + capitalizeFirst(response.types[0]["type"]["name"]))
             .appendTo("#statlist");
             $("<li />").text("Attack: " + response.stats[4]["base_stat"])
@@ -39,8 +39,6 @@ $(document).ready(function() {
             url: queryURL,
             method: "GET"
         }).then(function(response){
-            console.log(response);
-            
             for (let i = 0; i < 10; i++){
                 let stillURL = response.data[i]["images"]["fixed_height_small_still"]["url"];
                 let animatedURL = response.data[i]["images"]["fixed_height_small"]["url"];
@@ -74,15 +72,36 @@ $(document).ready(function() {
             
         })
     }
-    function renderButtons() {
-        for (let i = 0; i < pokeArray.length; i++) {
-            let userBtn = $("<button />");
-            userBtn.addClass("pokebutton btn btn-danger m-1")
-            .attr("value",pokeArray[i])
-            .text(capitalizeFirst(pokeArray[i]))
-            .appendTo($("#user-pokemon"));
-        }
+    function renderButton(name) {
+        let userBtn = $("<button />");
+        userBtn.addClass("pokebutton btn btn-danger m-1")
+        .attr("value",name)
+        .text(capitalizeFirst(name))
+        .appendTo($("#user-pokemon"));
     }
+
+    //Starter Pokemon
+    function createStarterButton(name) {
+        let userBtn = $("<button />");
+        userBtn.addClass("pokebutton btn btn-danger m-1")
+        .attr("value",name)
+        .text(capitalizeFirst(name));
+        return userBtn;
+    }
+    function displayStarterButton (starters, region) {
+        starters.forEach(function(name){
+            name.appendTo(`#${region}-box`);
+        })
+    }
+    (function () {
+        let kantoButtons = kantoStarters.map(createStarterButton);
+        let johtoButtons = johtoStarters.map(createStarterButton);
+        let hoennButtons = hoennStarters.map(createStarterButton);
+        displayStarterButton(kantoButtons,"kanto");
+        displayStarterButton(johtoButtons,"johto");
+        displayStarterButton(hoennButtons,"hoenn");
+        
+    })();
 
     $(document).on("click","#gifbutton",function(event){
         console.log("it works!");
@@ -117,7 +136,7 @@ $(document).ready(function() {
             .appendTo($("#user-pokemon"));
         } else {
             pokeArray.push(pokemon.toLowerCase());
-            renderButtons();
+            pokeArray.map(renderButton);
         } 
     })
 });
