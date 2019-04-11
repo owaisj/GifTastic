@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    let pokeArray = [];
+    let billsPokemon = [];
     let kantoStarters = ["pikachu","eevee","bulbasaur","charmander","squirtle"];
     let hoennStarters = ["treecko","torchic","mudkip"];
     let johtoStarters = ["chikorita","cyndaquil","totodile"];
@@ -8,7 +8,6 @@ $(document).ready(function() {
         return word.charAt(0).toUpperCase() + word.slice(1);
     }
     function displayPokemon(pokemon) {
-        
         let queryURL = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
 
         $.ajax({
@@ -95,10 +94,13 @@ $(document).ready(function() {
     })();
 
     $(document).on("click","#gifbutton",function(event){
-        console.log("it works!");
         $("#gif-container").addClass("border border-danger bg-light");
         $("#gif-box").empty();
         displayPokeGif($(this).attr("value"));
+        window.scrollTo({
+            top: 750,
+            behavior: "smooth"
+        })
     });
     $(document).on("click",".gif",function(event){
         if($(this).attr("src") === $(this).attr("still")){
@@ -128,8 +130,8 @@ $(document).ready(function() {
             .text("Please enter a name")
             .appendTo($("#user-box"));
         } else {
-            pokeArray.push(pokemon.toLowerCase());
-            userPokemonButtons = pokeArray.map(createButton);
+            billsPokemon.push(pokemon.toLowerCase());
+            userPokemonButtons = billsPokemon.map(createButton);
             displayButton(userPokemonButtons,"user")
         } 
     })
