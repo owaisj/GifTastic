@@ -14,6 +14,7 @@ $(document).ready(function() {
             url: queryURL,
             method: "GET"
         }).then(function(response) {
+            //TODO: Streamline these with template literal
             $("<img />").attr("src",response.sprites["front_default"])
             .addClass("text-center")
             .appendTo("#poketop");
@@ -39,6 +40,7 @@ $(document).ready(function() {
             method: "GET"
         }).then(function(response){
             for (let i = 0; i < 10; i++){
+                //TODO
                 let stillURL = response.data[i]["images"]["fixed_height_small_still"]["url"];
                 let animatedURL = response.data[i]["images"]["fixed_height_small"]["url"];
                 let gifDiv = $("<div />").addClass("gifDiv m-1");
@@ -73,6 +75,7 @@ $(document).ready(function() {
     }
 
     function createButton(name) {
+        //TODO
         let userBtn = $("<button />");
         userBtn.addClass("pokebutton btn btn-danger m-1")
         .attr("value",name)
